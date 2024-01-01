@@ -9,6 +9,8 @@ env:
 
   release_name: My app {version}
 
+  priv_key: ${{ secrets.TAURI_PRIV_KEY }}
+
 permissions: write-all
 
 jobs:
@@ -96,6 +98,8 @@ jobs:
       - name: Build Tauri App
         id: upload-id
         uses: tauri-apps/tauri-action@v0
+        env:
+          TAURI_PRIVATE_KEY: ${{ env.priv_key }}
         with:
           projectPath: ./tauri
           releaseId: ${{ needs.create_release.outputs.RELEASE_ID }}
