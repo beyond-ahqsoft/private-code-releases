@@ -31,12 +31,14 @@ jobs:
         id: version
         env:
           REL: ${{ env.release_name }}
+          repo: ${{ github.repository }}
         with:
           result-encoding: string
           script: |
             const { version } = require("./package.json");
 
-            const { REL, owner, repo } = process.env;
+            const { REL } = process.env;
+            const [owner, repo] = process.env.repo.split("/");
 
             const release = await github.rest.repos.createRelease({
               owner,
