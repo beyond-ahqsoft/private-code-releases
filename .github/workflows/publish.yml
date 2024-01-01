@@ -100,6 +100,7 @@ jobs:
         uses: tauri-apps/tauri-action@v0
         env:
           TAURI_PRIVATE_KEY: ${{ env.priv_key }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           projectPath: ./tauri
           releaseId: ${{ needs.create_release.outputs.RELEASE_ID }}
