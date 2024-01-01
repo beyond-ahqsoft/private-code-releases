@@ -1,0 +1,123 @@
+name: Build App
+
+on:
+  workflow_dispatch:
+
+env:
+  repo: beyond-ahqsoft/private-code
+  gh_pat: ${{ secrets.PAT }}
+
+  release_name: My app {version}
+
+permissions: write-all
+
+jobs:
+  create_release:
+    name: Create a release
+    runs-on: ubuntu-latest
+
+    outputs:
+      RELEASE_ID: ${{ steps.version.outputs.result }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.repo }}
+          token: ${{ env.gh_pat }}
+
+      - name: Get Version
+        uses: actions/github-script@v7
+        id: version
+        env:
+          REL: ${{ env.release_name }}
+        with:
+          result-encoding: string
+          script: |
+            const { version } = require("./package.json");
+
+            const { REL, owner, repo } = process.env;
+
+            const release = await github.rest.repos.createRelease({
+              owner,
+              repo,
+              tag_name: `v${version}`,
+              name: REL.replace("{version}", `v${version}`)
+            });
+
+
+            return release.data.id;
+
+  build:
+    needs: [create_release]
+    name: Build the app
+
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-lates]
+
+    runs-on: ${{ matrix.os }}
+
+    outputs:
+      release_id: ${{ steps.upload-id.outputs.releaseId }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout Private tauri app
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.repo }}
+          token: ${{ env.gh_pat }}
+          path: ./tauri
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+
+      - name: Rust setup
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Setup PNPM
+        run: npm i -g pnpm
+
+      - name: Build Tauri App
+        id: upload-id
+        uses: tauri-apps/tauri-action@v0
+        with:
+          projectPath: ./tauri
+          releaseId: ${{ needs.create_release.outputs.RELEASE_ID }}
+
+  publish:
+    needs: [build, create_release]
+    name: Publish Tauri App
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+
+      - name: Setup PNPM
+        run: npm i -g pnpm
+
+      - name: Install Deps
+        run: pnpm install
+
+      - name: Build Publish
+        uses: actions/github-script@v7
+        env:
+          REPO: ${{ github.repository }}
+          R_ID: ${{ needs.build.outputs.release_id }}
+        with:
+          script: |
+            const [owner, repo] = process.env.REPO.split("/");
+            await (require("./index.js"))(github, owner, repo, process.env.R_ID)
+
+      - name: Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: latest.json
