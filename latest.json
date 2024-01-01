@@ -1,15 +1,19 @@
 {
   "version": "1.0.0",
   "notes": "",
-  "pub_date": "2024-01-01T17:21:56.086Z",
+  "pub_date": "2024-01-01T17:29:19.187Z",
   "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRcTZiYVdWVHdSYXFGVHhKdEtINmkvZzllM0NMS1k2S0UzY3lweVFha1o0V0hEZ04xcUtXd3E0QkxhMHBvMXZqSjlNM1Z1U3ZCbVpyUGRrL2F0akU5WVppdkp2UHBTTndjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzA0MTMwMDMzCWZpbGU6UHJpdmF0ZSBHaXRIdWIgQ29kZV8xLjAuMF94NjRfZW4tVVMubXNpLnppcApCbzNnTHNCTUxuQjBlek8zTkVLbnVlMHN6Q2RjTVkxaG9TWTljQVo1Uk12MnRxT05Jb0QzdHE2YVE4UkZZdGhibC9CRHpRWmVjQjkvY2VyRDRpSHFDdz09Cg==",
+      "url": "https://github.com/beyond-ahqsoft/private-code-releases/releases/download/v1.0.0/Private.GitHub.Code_1.0.0_x64_en-US.msi.zip"
+    },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRcTZiYVdWVHdSYWlLRzRRNEhMQkVYR0FsaG9GMXBKVEJiSTQzSTNMc3FJdHFtRFIyRmRKck12SnQyem5jMjJBaEhURWZFQkdvNHhYRlNVajZ5cDVpNWpjaEZFMzFkRUFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzA0MTI5NjQ0CWZpbGU6cHJpdmF0ZS1naXQtaHViLWNvZGVfMS4wLjBfYW1kNjQuQXBwSW1hZ2UudGFyLmd6CkxiRXcwaTZha0M0dS9Belk2aDlKVXJYSFhsK1BGOURCT21YdUtVQUJKUk1mTG5HUHoxVWpCbkFDaEx0dnhiblZ2c3c1WVNJY1NiQ05SR1dlQzVqaEF3PT0K",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRcTZiYVdWVHdSYXFuUEtrbDdXNHlPVCttRFZEREpwNGdCUExiWVpaRjh2S3laNTBTTjlvNHVpTE5HSERmdUh1Njc0b2x6bGlVTWFDc0NQNU9xR0dCUlIra3ZRUSsvcVE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzA0MTMwMDY0CWZpbGU6cHJpdmF0ZS1naXQtaHViLWNvZGVfMS4wLjBfYW1kNjQuQXBwSW1hZ2UudGFyLmd6Cmh2dEh2TkFQbHRuTmlJTEZIRXlRNW9yVFRsUEtONDdSQWpLRVlwNkppSytkTDNxRnE1WW9wMlBXSG1CN0c3VndzMjlaeWYvSlNxaThUWDRabDFCTER3PT0K",
       "url": "https://github.com/beyond-ahqsoft/private-code-releases/releases/download/v1.0.0/private-git-hub-code_1.0.0_amd64.AppImage.tar.gz"
     },
-    "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRcTZiYVdWVHdSYW0wbGlHQVlURVJ2dWRrYmhEWFoyeXo1RnFabk1pTkQrdW13TGVSakpqSjRlUnZFWWF0ZTlTWmZjeVhCTGlUTGp5WDJYWHdDUFc3ZGkxMW9naFJnMFFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzA0MTI5NzExCWZpbGU6UHJpdmF0ZSBHaXRIdWIgQ29kZV8xLjAuMF94NjRfZW4tVVMubXNpLnppcApYaVVJanJZR09ZU1FubFZZTHlGNVZxZ0J1SnVGeStTa1NXano4b3I2eDZOdXBXNlc1ZHJBQk9CS0dqZmdkQUZmWk1jK2RlRUxyQU9DSG9icjBUTTdCQT09Cg==",
-      "url": "https://github.com/beyond-ahqsoft/private-code-releases/releases/download/v1.0.0/Private.GitHub.Code_1.0.0_x64_en-US.msi.zip"
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRcTZiYVdWVHdSYWsrSjgyK2VmTWFJTVVsT2VieExtWDJMT2F3T2FSZFVYdFo3TmtJN0JLc0c5VXhmRzRKRkFHZ0xiZTFQRnlpYU1QT0tUVlArcmV3MkV4TUdXazdlRUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzA0MTMwMTU1CWZpbGU6UHJpdmF0ZSBHaXRIdWIgQ29kZS5hcHAudGFyLmd6CnlEZHo4N2I3eU13MW9mTUtHL3VGcGtWN1VPVlNLdjEwbFpDWmRJeDZ5NXBhT2JiL0ZxVTF0dHJRVjdVWmZac2I2dVozbE9IYUEzVU1DOUhuYlc4S0N3PT0K",
+      "url": "https://github.com/beyond-ahqsoft/private-code-releases/releases/download/v1.0.0/Private.GitHub.Code_x64.app.tar.gz"
     }
   }
 }
